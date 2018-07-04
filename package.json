@@ -1,8 +1,8 @@
 {
   "name": "config-itf",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A Vue.js project",
-  "author": "swen <merlinwen@gmail.com>",
+  "author": "swen <s.wen@ihealthlabs.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

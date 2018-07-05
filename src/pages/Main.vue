@@ -1,14 +1,18 @@
 <template>
   <div>
-    <router-link to="/abpm">
-    <Button type="ghost" @click="this.$router.push('/abpmm')">ABPM</Button>
-    </router-link>
+    <!-- <router-link  to="/abpm"> -->
+    <!-- <Button type="ghost"></Button> -->
+    <!-- </router-link> -->
+    <Button type="ghost" @click="goto('/abpm')">ABPM</Button>
   </div>
 </template>
 
 <script>
-// import { Button } from 'iview';
-// import Vue from 'vue';
-
-export default {};
+export default {
+  methods: {
+    goto(path) {
+      this.$router.push(path);
+    }
+  }
+};
 </script>

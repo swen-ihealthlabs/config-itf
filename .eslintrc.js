@@ -9,11 +9,7 @@ module.exports = {
   env: {
     browser: true
   },
-  extends: [
-    'prettier',
-    'prettier/standard',
-    'plugin:vue/essential'
-  ],
+  extends: ['prettier', 'prettier/standard', 'plugin:vue/essential'],
   // required to lint *.vue files
   plugins: ['vue', 'prettier'],
   // add your custom rules here
@@ -23,6 +19,13 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    // avoid eslint-plugin-vue: x-invalid-end-tag error
+    'vue/no-parsing-error': [
+      2,
+      {
+        'x-invalid-end-tag': false
+      }
+    ]
   }
 };

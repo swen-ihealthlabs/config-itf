@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Table width="550" border :columns="columns2" :data="data3"></Table>
+    <Table width="550" height="400" border :columns="columns2" :data="data3"></Table>
   </div>
 </template>
 <script>
@@ -9,41 +9,20 @@ export default {
     return {
       columns2: [
         {
-          title: 'Name',
-          key: 'name',
-          width: 100,
-          fixed: 'left'
-        },
-        {
-          title: 'Age',
-          key: 'age',
-          width: 100
-        },
-        {
-          title: 'Province',
-          key: 'province',
-          width: 100
-        },
-        {
-          title: 'City',
-          key: 'city',
-          width: 100
-        },
-        {
-          title: 'Address',
-          key: 'address',
+          title: 'Key',
+          key: 'key',
           width: 200
         },
         {
-          title: 'Postcode',
-          key: 'zip',
-          width: 100
+          title: 'Value',
+          key: 'value',
+          width: 220
         },
         {
           title: 'Action',
           key: 'action',
           fixed: 'right',
-          width: 120,
+          width: 130,
           render: (h, params) => {
             return h('div', [
               h(
@@ -54,7 +33,7 @@ export default {
                     size: 'small'
                   }
                 },
-                'View'
+                'Edit'
               ),
               h(
                 'Button',
@@ -64,7 +43,7 @@ export default {
                     size: 'small'
                   }
                 },
-                'Edit'
+                'Delete'
               )
             ]);
           }
@@ -72,36 +51,32 @@ export default {
       ],
       data3: [
         {
-          name: 'John Brown',
-          age: 18,
-          address: 'New York No. 1 Lake Park',
-          province: 'America',
-          city: 'New York',
-          zip: 100000
+          key: 'John Brown',
+          value: 18
         },
         {
-          name: 'Jim Green',
-          age: 24,
-          address: 'Washington, D.C. No. 1 Lake Park',
-          province: 'America',
-          city: 'Washington, D.C.',
-          zip: 100000
+          key: 'Jim Green',
+          value: 24
         },
         {
-          name: 'Joe Black',
-          age: 30,
-          address: 'Sydney No. 1 Lake Park',
-          province: 'Australian',
-          city: 'Sydney',
-          zip: 100000
+          key: 'Joe Black',
+          value: 30
         },
         {
-          name: 'Jon Snow',
-          age: 26,
-          address: 'Ottawa No. 2 Lake Park',
-          province: 'Canada',
-          city: 'Ottawa',
-          zip: 100000
+          key: 'Jon Snow',
+          value: 26
+        },
+        {
+          key: 'Jon Snow',
+          value: 26
+        },
+        {
+          key: 'Jon Snow',
+          value: 26
+        },
+        {
+          key: 'Jon Snow',
+          value: 26
         }
       ]
     };

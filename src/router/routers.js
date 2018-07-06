@@ -1,17 +1,24 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Foo from '@/components/Foo';
+import ServerList from '@/components/ServerList';
 import Main from '@/pages/Main';
 
 export const abpmRouter = {
   path: '/abpm',
-  name: 'abpm',
-  component: Foo
+  name: 'Abpm',
+  component: ServerList,
+  props: true,
+  children: [
+    {
+      path: ':env',
+      component: resolve => require(['@/components/ConfigTable'], resolve)
+    }
+  ]
 };
 
 export const rootRouter = {
   path: '/',
-  name: 'main',
+  name: 'Main',
   component: Main
 };
 

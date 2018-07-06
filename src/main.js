@@ -3,7 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import { router } from './router/index';
-import { Button } from 'iview';
+import { Button, Row, Col, Table } from 'iview';
 import store from './store';
 import 'iview/dist/styles/iview.css';
 
@@ -14,6 +14,9 @@ Vue.config.debug = true;
 // Vue.use(iView);
 // when we need certain component only
 Vue.component('Button', Button);
+Vue.component('Row', Row);
+Vue.component('Col', Col);
+Vue.component('Table', Table);
 /* eslint-disable no-new */
 
 new Vue({

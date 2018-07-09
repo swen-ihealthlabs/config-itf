@@ -2,9 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
 import App from './App';
-import { router } from './router/index';
-import { Button, Row, Col, Table } from 'iview';
+import router from './router/index';
 import store from './store';
+import { Button, Row, Col, Table, Icon, Spin } from 'iview';
 import 'iview/dist/styles/iview.css';
 
 Vue.config.productionTip = false;
@@ -17,6 +17,8 @@ Vue.component('Button', Button);
 Vue.component('Row', Row);
 Vue.component('Col', Col);
 Vue.component('Table', Table);
+Vue.component('Spin', Spin);
+Vue.component('Icon', Icon);
 /* eslint-disable no-new */
 
 new Vue({

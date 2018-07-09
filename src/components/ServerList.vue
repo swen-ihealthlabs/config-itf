@@ -14,6 +14,11 @@
       </Col>
   </Row>
   <br>
+  <!-- <Row>
+    <Col class="demo-spin-col" span="8">
+      <Loading :show='isLoading' />
+    </Col>
+  </Row> -->
   <Row type="flex" justify="center" class="code-row-bg">
       <router-view></router-view>
   </Row>

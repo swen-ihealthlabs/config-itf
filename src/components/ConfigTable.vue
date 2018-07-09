@@ -1,9 +1,10 @@
 <template>
   <div>
-    <Table width="550" height="400" border :columns="columns2" :data="data3"></Table>
+    <Table width="550" height="400" border :loading="this.isLoading" :columns="columns2" :data="data3"></Table>
   </div>
 </template>
 <script>
+import { mapState } from 'vuex';
 export default {
   data() {
     return {
@@ -77,9 +78,18 @@ export default {
         {
           key: 'Jon Snow',
           value: 26
+        },
+        {
+          key: 'Jon Snow',
+          value: 26
+        },
+        {
+          key: 'Jon Snow',
+          value: 26
         }
       ]
     };
-  }
+  },
+  computed: mapState(['isLoading'])
 };
 </script>

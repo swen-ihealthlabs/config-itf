@@ -8,10 +8,13 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
+    "fix": "./node_modules/eslint/bin/eslint.js --fix src",
     "build": "node build/build.js"
   },
   "dependencies": {
+    "dotenv": "^6.0.0",
     "iview": "^2.14.3",
+    "ssh2-promise": "0.0.9",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"

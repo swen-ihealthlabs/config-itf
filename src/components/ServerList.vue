@@ -4,10 +4,10 @@
   <br>
   <Row type="flex" justify="center" class="code-row-bg">
       <Col span="4">
-        <Button type="ghost" @click="goto('demo')">Demo</Button>
+        <Button type="ghost" @click="goto('demo')">Dev</Button>
       </Col>
       <Col span="4">
-        <Button type="ghost" @click="goto('preprod')">Preprod</Button>
+        <Button type="ghost" @click="goto('preprod')">Demo</Button>
       </Col>
       <Col span="4">
         <Button type="ghost" @click="goto('prod')">Prod</Button>

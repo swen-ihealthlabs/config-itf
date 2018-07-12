@@ -12,16 +12,12 @@ const RouterConfig = {
 const router = new VueRouter(RouterConfig);
 
 router.beforeEach((to, from, next) => {
-  store.commit(
-    'interlude/updateLoadingStatus',
-    { isLoading: true }
-    // { root: true }
-  );
+  store.commit('interlude/updateLoadingStatus', { isLoading: true });
   next();
 });
 
-router.afterEach(to => {
-  store.commit('interlude/updateLoadingStatus', { isLoading: false });
-});
+// router.afterEach(to => {
+//   store.commit('interlude/updateLoadingStatus', { isLoading: false });
+// });
 
 export default router;

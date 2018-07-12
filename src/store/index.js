@@ -7,8 +7,18 @@ const state = {
   count: 0
 };
 
+const actions = {
+  getConfigAsync({ commit, state }) {}
+  // async call to get json
+
+  // assign json to component
+
+  // commit mutations of loading status
+};
+
 const store = new Vuex.Store({
-  state
+  state,
+  actions
 });
 
 store.registerModule('interlude', {

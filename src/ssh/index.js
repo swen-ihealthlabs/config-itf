@@ -1,44 +1,38 @@
-const SSH2Promsie = require('ssh2-promise');
+// import SftpClient from './sftpClient';
+const SftpClient = require('./sftpClient');
 const util = require('util');
-const path = require('path');
 
-const sshconfig = {
-  host: process.env.HOST || '35.180.41.80',
-  // user: process.env.USER || 'ubuntu',
-  username: 'ubuntu',
-  identity:
-    process.env.IDENTITY_PATH ||
-    path.join(process.env.HOME, '.ssh/paris_aws_key_pair.pem')
+module.exports = exports;
+const client = new SftpClient();
+
+const getConfigAsync = async (path, env) => {
+  const ssh = await client.connect();
+  // await client.getSftp(ssh);
+  const configFilePath = await client.getConfigFilePath(path, env);
+  const configs = await client.getConfigContent(configFilePath);
+  console.log(util.inspect(configs));
+  return configs;
 };
 
-const prefix = 'cardiomed';
-
-console.log(util.inspect(sshconfig));
-
-const ssh = new SSH2Promsie(sshconfig);
-const sftp = new SSH2Promsie.SFTP(ssh);
-
-const connectSSH = async ssh => {
-  try {
-    await ssh.connect();
-    console.log('SSH connection established');
-    const list = await sftp.readdir('/home/ubuntu/apps/envserver');
-    // console.log(`files are ${util.inspect(list)}`);
-    if (list) {
-      const reg = new RegExp(prefix, 'g');
-      const result = list
-        .filter(it => it.longname.charAt(0) === '-')
-        .filter(it => reg.test(it.filename));
-      console.log(`filtered: ${util.inspect(result)}`);
-    }
-    // const attributes = await sftp.attrs();
-    // console.log(`files are ${util.inspect(attributes)}`);
-  } catch (err) {
-    throw Error(err);
+const configToJson = configs => {
+  let res;
+  const reg = /\r?\n/;
+  if (configs) {
+    res = configs.split(reg).reduce(function(o, pair) {
+      pair = pair.split('=').map(p => p.trim());
+      o[pair[0]] = pair[1];
+      return o;
+    }, {});
   }
+  console.log(util.inspect(res));
+
+  return res;
 };
 
-connectSSH(ssh);
-// ssh.connect().then(() => {
-//   console.log('Connection established');
-// });
+// getConfigAsync(process.env.CONFIGPATH, process.env.DEMOENV);
+const test = async () => {
+  const config = await getConfigAsync('/home/ubuntu/apps/envserver', 'demo');
+  const jsonObject = configToJson(config);
+};
+
+test();

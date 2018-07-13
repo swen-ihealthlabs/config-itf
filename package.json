@@ -9,7 +9,7 @@
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
     "fix": "./node_modules/eslint/bin/eslint.js --fix src",
-    "build": "node build/build.js"
+    "build": "npx babel src/ssh/index.js -d dist -s"
   },
   "dependencies": {
     "dotenv": "^6.0.0",

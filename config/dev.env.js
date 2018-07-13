@@ -8,5 +8,7 @@ module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
   IDENTITY_PATH: path.join(process.env.HOME, '.ssh/paris_aws_key_pair.pem'),
   HOST: process.env.HOST,
-  USER: process.env.USER
+  USERNAME: process.env.USERNAME,
+  CONFIGPATH: process.env.CONFIGPATH,
+  DEMOENV: process.env.DEMOENV
 });

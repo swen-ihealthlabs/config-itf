@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import SftpClient from '../ssh/sftpClient';
 
 Vue.use(Vuex);
 

@@ -39,19 +39,6 @@ module.exports = class SftpClient {
     return ssh;
   }
 
-  // async getSftp(ssh, _extSsh = null) {
-  //   const customSsh = _extSsh || ssh;
-  //   if (!sftp) {
-  //     try {
-  //       sftp = await new SSH2Promsie.SFTP(customSsh);
-  //       return sftp;
-  //     } catch (err) {
-  //       throw err;
-  //     }
-  //   }
-  //   return sftp;
-  // }
-
   async getConfigList(path) {
     let result = [];
     try {

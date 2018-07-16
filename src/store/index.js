@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import SftpClient from '../ssh/sftpClient';
+// const configToData = require('../ssh').configToData;
 
 Vue.use(Vuex);
 
@@ -9,7 +9,7 @@ const state = {
 };
 
 const actions = {
-  getConfigAsync({ commit, state }) {}
+  fetchConfigAsync({ commit, state }) {}
   // async call to get json
 
   // assign json to component
